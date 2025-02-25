@@ -28,3 +28,7 @@ scaled_input = scale.transform(input_data)
 if st.sidebar.button("Predict"):
     prediction = model.predict(scaled_input)
     st.success(f"Prediction: {prediction[0]}")
+    if prediction[0] == 0:
+        st.success("You are NOT Diabetic")
+    else:
+        st.success("You are Diabetic")
